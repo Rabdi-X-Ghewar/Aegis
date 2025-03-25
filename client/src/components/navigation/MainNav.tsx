@@ -1,11 +1,14 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { UserCircle, WalletIcon } from "lucide-react"
 import { usePrivy, useWallets } from "@privy-io/react-auth"
-import { Button } from "./ui/button"
+import { Button } from "../ui/button"
 import { useCreateWallet } from '@privy-io/react-auth';
 import { createWalletClient, custom, Hex, parseEther } from 'viem';
 import { sepolia } from 'viem/chains';
 import { useOCAuth } from '@opencampus/ocid-connect-js';
+import WalletConnectButton from "../PetraConnect";
+
+
 
 export function MainNav() {
     const { linkWallet } = usePrivy();
@@ -24,6 +27,7 @@ export function MainNav() {
         });
         console.log(signature);
     }
+
 
     const transaction = async () => {
         const wallet = wallets.find(wallet => wallet.walletClientType === 'privy');

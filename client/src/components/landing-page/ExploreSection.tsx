@@ -2,9 +2,9 @@ import { ArrowRight } from 'lucide-react';
 // import FloatingIcons from './FloatingIcons';
 import FeatureCarousel from './Carousel';
 import { motion } from "framer-motion"
-import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
-import Login from './Login';
-import Marquee from './ui/marquee';
+import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import Login from '../Login';
+import Marquee from '../ui/marquee';
 
 
 const ExploreSection = () => {

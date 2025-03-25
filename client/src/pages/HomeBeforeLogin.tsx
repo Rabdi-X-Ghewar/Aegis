@@ -1,7 +1,7 @@
-import ExploreSection from "../components/ExploreSection"
-import Features from "../components/Features"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import ExploreSection from "../components/landing-page/ExploreSection"
+import Features from "../components/landing-page/Features"
+import Navbar from "../components/navigation/Navbar"
+import Footer from "../components/navigation/Footer"
 
 
 const HomeBeforeLogin = () => {

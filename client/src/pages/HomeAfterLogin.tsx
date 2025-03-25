@@ -1,5 +1,5 @@
-import { MainNav } from "../components/MainNav"
-import { AppSidebar } from "../components/AppSidebar"
+import { MainNav } from "../components/navigation/MainNav"
+import { AppSidebar } from "../components/navigation/AppSidebar"
 import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar"
 
 const HomeAfterLogin = () => {

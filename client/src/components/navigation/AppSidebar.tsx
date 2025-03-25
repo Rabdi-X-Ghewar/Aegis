@@ -7,10 +7,10 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarRail,
-} from "./ui/sidebar"
+} from "../ui/sidebar"
 import { usePrivy, useWallets } from "@privy-io/react-auth";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 import { Link } from "react-router";
 
 const sidebarItems = [

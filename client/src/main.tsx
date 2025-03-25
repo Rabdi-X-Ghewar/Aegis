@@ -9,6 +9,7 @@ import ErrorBoundary from './ErrorBoundary.tsx'
 import { Toaster } from 'sonner'
 import { OCConnect } from '@opencampus/ocid-connect-js'
 import { BrowserRouter } from 'react-router'
+import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react'
 
 const solanaConnectors = toSolanaWalletConnectors({
   // By default, shouldAutoConnect is enabled
@@ -18,7 +19,6 @@ const solanaConnectors = toSolanaWalletConnectors({
 
 const opts = {
   redirectUri: 'http://localhost:5173/redirect',
-  referralCode: 'PARTNER6'
 }
 
 createRoot(document.getElementById('root')!).render(
@@ -45,7 +45,11 @@ createRoot(document.getElementById('root')!).render(
       >
         <OCConnect opts={opts} sandboxMode={true}>
           <BrowserRouter>
-            <App />
+            <AptosWalletAdapterProvider>
+              <App />
+            </AptosWalletAdapterProvider>
+
+
           </BrowserRouter>
 
         </OCConnect>

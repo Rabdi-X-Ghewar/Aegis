@@ -9,7 +9,7 @@ from pathlib import Path
 from prompt_toolkit import PromptSession
 from prompt_toolkit.completion import WordCompleter
 from prompt_toolkit.styles import Style
-from prompt_toolkit.formatted_text import HTML
+from prompt_toolkit.formatted_text import HTM
 from prompt_toolkit.history import FileHistory
 from src.agent import ZerePyAgent
 from src.helpers import print_h_bar
