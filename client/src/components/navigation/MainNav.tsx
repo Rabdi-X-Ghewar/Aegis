@@ -6,7 +6,7 @@ import { useCreateWallet } from '@privy-io/react-auth';
 import { createWalletClient, custom, Hex, parseEther } from 'viem';
 import { sepolia } from 'viem/chains';
 import { useOCAuth } from '@opencampus/ocid-connect-js';
-import WalletConnectButton from "../PetraConnect";
+
 
 
 
