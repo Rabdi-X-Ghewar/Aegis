@@ -11,10 +11,13 @@ import { OCConnect } from '@opencampus/ocid-connect-js'
 import { BrowserRouter } from 'react-router'
 import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react'
 
+
 const solanaConnectors = toSolanaWalletConnectors({
   // By default, shouldAutoConnect is enabled
   shouldAutoConnect: true,
 });
+
+
 
 
 const opts = {
@@ -46,7 +49,9 @@ createRoot(document.getElementById('root')!).render(
         <OCConnect opts={opts} sandboxMode={true}>
           <BrowserRouter>
             <AptosWalletAdapterProvider>
-              <App />
+
+                  <App />
+
             </AptosWalletAdapterProvider>
 
 

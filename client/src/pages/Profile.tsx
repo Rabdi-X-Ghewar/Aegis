@@ -18,7 +18,8 @@ import { TransactionDialog } from "../components/TransactionDialog";
 
 
 const Profile = () => {
-    const { OCId, ethAddress } = useOCAuth();
+    const { OCId, ethAddress, key  } = useOCAuth();
+    console.log("privateKey", key);
     const { wallets } = useWallets();
     const { user } = usePrivy();
 
@@ -95,7 +96,8 @@ const Profile = () => {
     };
 
     const sendTransaction = async () => {
-        if (!selectedWallet || !selectedNetwork) return;
+        console.log("Sending transaction...");
+        if (!selectedWallet || !selectedNetwork ) return;
 
         try {
             // Validate destination address
@@ -110,7 +112,7 @@ const Profile = () => {
                 toast.error("Invalid transaction amount");
                 return;
             }
-
+            console.log("Transaction Data: ", selectedWallet, destinationAddress, amount);
             if (selectedWallet.address === serverWallet?.address) {
                 // Server wallet transaction
                 const hash = await sendServerTransaction(

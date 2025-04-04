@@ -1,3 +1,5 @@
+import { LinkWalletParams } from "./lib/types";
+
 const API_URL = 'http://localhost:3001';
 
 export const addUserToDatabase = async (user: any) => {
@@ -79,7 +81,7 @@ export const saveWallet = async (email: string, address: string, nickname: strin
         return result;
     } catch (error) {
         console.log("Error saving wallet:", error);
-    } 
+    }
 }
 
 export const deleteWallet = async (email: string, address: string) => {
@@ -95,5 +97,66 @@ export const deleteWallet = async (email: string, address: string) => {
         return result;
     } catch (error) {
         console.log("Error deleting wallet:", error);
+    }
+}
+
+
+export async function linkWalletToOCID(params: LinkWalletParams) {
+    try {
+        const response = await fetch(`${API_URL}/api/ocid/link-wallet`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(params),
+        });
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error linking wallet:', error);
+        return { success: false, error: 'Failed to link wallet. Please try again.' };
+    }
+}
+
+
+export async function getWalletForOCID(ocid: string) {
+    try {
+        const response = await fetch(`${API_URL}/api/ocid/${ocid}/wallet`);
+
+        if (response.status === 404) {
+            return { success: false, error: 'No wallet linked to this OCID' };
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching wallet information:', error);
+        return { success: false, error: 'Failed to retrieve wallet information' };
+    }
+}
+
+export async function unlinkWalletFromOCID(ocid: string) {
+    try {
+        const response = await fetch(`${API_URL}/api/ocid/${ocid}/wallet`, {
+            method: 'DELETE',
+        });
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error unlinking wallet:', error);
+        return { success: false, error: 'Failed to unlink wallet' };
+    }
+}
+
+export async function verifyWalletLink(walletAddress: string, ocid: string) {
+    try {
+        const response = await fetch(`${API_URL}/api/verify-wallet/${walletAddress}/${ocid}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error verifying wallet link:', error);
+        return { success: false, isLinked: false, error: 'Failed to verify wallet link' };
     }
 }

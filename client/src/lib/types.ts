@@ -28,3 +28,11 @@ export const CHAIN_MAP = {
     optimism: optimism,
     holesky: holesky
 };
+
+export interface LinkWalletParams {
+    ocid: string;
+    walletAddress: string;
+    signature: string;
+    message: string;
+    timestamp: number;
+  }

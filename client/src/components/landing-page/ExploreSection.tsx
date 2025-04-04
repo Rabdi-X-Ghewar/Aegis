@@ -10,30 +10,30 @@ import Marquee from '../ui/marquee';
 const ExploreSection = () => {
     const words = [
         {
-          text: "Do",
-          className: "text-white text-3xl", // Increased font size
+            text: "Do",
+            className: "text-white text-3xl", // Increased font size
         },
         {
-          text: "All",
-          className: "text-white text-3xl",
+            text: "All",
+            className: "text-white text-3xl",
         },
         {
-          text: "DEFI",
-          className: "text-white text-3xl",
+            text: "DEFI",
+            className: "text-white text-3xl",
         },
         {
-          text: "Tooling",
-          className: "text-white text-3xl",
+            text: "Tooling",
+            className: "text-white text-3xl",
         },
         {
-          text: "with",
-          className: "text-white text-3xl",
+            text: "with",
+            className: "text-white text-3xl",
         },
         {
-          text: "PLUTUS",
-          className: "text-white text-4xl font-bold", 
+            text: "PLUTUS",
+            className: "text-white text-4xl font-bold",
         },
-      ];
+    ];
     return (
         <div className="relative isolate overflow-hidden bg-background min-h-screen">
             <div className="mx-auto max-w-7xl px-6 py-24 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
@@ -52,7 +52,7 @@ const ExploreSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1 }}
                     >
-                        Your One stop platform for all DEFI actions, Get AI recommendations on best APY, Stake with any asset, get rewarded in 
+                        Your One stop platform for all DEFI actions, Get AI recommendations on best APY, Stake with any asset, get rewarded in
                         $EDU tokens, Use any onchain asset to do your onchain transactions.
                     </motion.p>
                     <motion.div
@@ -93,7 +93,7 @@ const ExploreSection = () => {
                             className="relative w-[500px] rounded-2xl shadow-2xl ring-1 ring-gray-800/10 transform hover:scale-[1.02] transition-transform duration-300"
                         />
                     </div>
-                </motion.div> 
+                </motion.div>
             </div>
             <div className="relative mt-12">
                 <FeatureCarousel />
