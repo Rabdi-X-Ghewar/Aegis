@@ -10,9 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aptos-labs/aptos-client": "^1.0.0",
-    "@aptos-labs/ts-sdk": "^1.35.0",
-    "@aptos-labs/wallet-adapter-react": "^4.1.2",
     "@lidofinance/lido-ethereum-sdk": "^4.2.0",
     "@opencampus/ocid-connect-js": "^1.2.6",
     "@privy-io/react-auth": "^2.7.2",
@@ -52,8 +49,8 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/node": "^22.13.1",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",

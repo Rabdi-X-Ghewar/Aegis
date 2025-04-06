@@ -9,7 +9,6 @@ import ErrorBoundary from './ErrorBoundary.tsx'
 import { Toaster } from 'sonner'
 import { OCConnect } from '@opencampus/ocid-connect-js'
 import { BrowserRouter } from 'react-router'
-import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react'
 
 
 const solanaConnectors = toSolanaWalletConnectors({
@@ -48,11 +47,9 @@ createRoot(document.getElementById('root')!).render(
       >
         <OCConnect opts={opts} sandboxMode={true}>
           <BrowserRouter>
-            <AptosWalletAdapterProvider>
 
                   <App />
 
-            </AptosWalletAdapterProvider>
 
 
           </BrowserRouter>

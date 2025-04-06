@@ -1,21 +1,12 @@
-import ExploreSection from "../components/landing-page/ExploreSection"
-import Features from "../components/landing-page/Features"
-import Navbar from "../components/navigation/Navbar"
-import Footer from "../components/navigation/Footer"
-
+import Hero from '@/components/landing-page/Hero';
 
 const HomeBeforeLogin = () => {
-    return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
-            <Navbar />
-            <main>
-                    <ExploreSection />
-                
-                <Features />
-                <Footer />
-            </main>
-        </div>
-    )
-}
+  return (
+    <div className="min-h-screen bg-black">
+     
+      <Hero />
+    </div>
+  );
+};
 
-export default HomeBeforeLogin
+export default HomeBeforeLogin;

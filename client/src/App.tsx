@@ -13,7 +13,6 @@ import Profile from './pages/Profile';
 import SavedWalletsPage from './pages/SavedWalletsPage';
 import TransactionPage from './pages/Transactions';
 import AgentDetails from './pages/AgentDetails';
-import Governance from './pages/Governance';
 import StakeTokens from './pages/StakeTokens';
 import { LoginCallBack } from '@opencampus/ocid-connect-js';
 import { toast } from 'sonner';
@@ -54,7 +53,6 @@ function App() {
               <Route path="/saved-wallets" element={<SavedWalletsPage />} />
               <Route path="/transactions" element={<TransactionPage />} />
               <Route path="/chat-bot" element={<AgentDetails />} />
-              <Route path='/governance' element={<Governance />} />
               <Route path='/stake' element={<StakeTokens />} />
             </>
           )}

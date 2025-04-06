@@ -7,7 +7,7 @@ const HomeAfterLogin = () => {
         <SidebarProvider>
             <div className="grid h-20 w-full lg:grid-cols-[auto_1fr]">
                 <AppSidebar />
-                <div className="flex flex-col h-fit">
+                <main className="flex flex-col h-fit"></main>
                     <header className="border-border">
                         <div className="flex h-16 items-center px-4 gap-4">
                             <SidebarTrigger className="text-muted-foreground hover:text-foreground" />
@@ -21,7 +21,6 @@ const HomeAfterLogin = () => {
                         </div>
                     </header>
                 </div>
-            </div>
         </SidebarProvider>
     )
 }
