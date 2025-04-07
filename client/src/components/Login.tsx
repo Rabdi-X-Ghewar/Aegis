@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { addUserToDatabase } from "../apiClient";
+import { HoverButton } from "./ui/hover-button";
 
 export default function Login() {
     const { createWallet } = useCreateWallet();
@@ -38,10 +39,10 @@ export default function Login() {
         <>
             {!authenticated &&
                 (
-                    <Button className="px-6 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors"
+                    <HoverButton className=" text-[#c0ff00] px-6 py-2 rounded-full transition-colors"
                         onClick={login}>
                         Log In
-                    </Button>
+                    </HoverButton>
                 )}
 
             {/* Modal for post-login actions */}

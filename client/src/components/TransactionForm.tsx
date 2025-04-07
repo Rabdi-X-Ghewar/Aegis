@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Label } from "./ui/label";
-import { Send, Wallet, Repeat } from "lucide-react";
+import { Send, Wallet, Repeat, ArrowRight } from "lucide-react";
 import { truncateAddress } from "../lib/utils";
 import { Input } from "./ui/input";
 import { DialogFooter } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { getWalletForOCID } from "../apiClient";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { cn } from "@/lib/utils";
 
 export const TransactionForm = ({ 
     senderAddress, 
@@ -50,7 +51,6 @@ export const TransactionForm = ({
             }
             
             setResolvedAddress(result.walletAddress);
-
         } catch (error) {
             setError("An error occurred while looking up the OCID");
             setResolvedAddress(null);
@@ -60,9 +60,7 @@ export const TransactionForm = ({
     };
 
     const handleSendTransaction = () => {
-        // Use resolved address if OCID was selected, otherwise use directly entered address
         const finalDestination = addressType === 'ocid' ? resolvedAddress : destinationAddress;
-        console.log("Final Destination:", finalDestination);
         if (!finalDestination) {
             setError("No valid destination address");
             return;
@@ -74,25 +72,40 @@ export const TransactionForm = ({
     };
     
     return (
-        <>
-            <div className="grid gap-6 py-4">
-                <div className="flex flex-col gap-2">
-                    <Label className="text-sm font-medium">From</Label>
-                    <div className="flex items-center gap-2 p-3 rounded-lg bg-muted">
-                        <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                            <Wallet className="h-4 w-4 text-primary" />
+        <div className="space-y-8">
+            {/* Transaction Overview Section */}
+            <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-muted" />
+                </div>
+                <div className="relative flex justify-center text-sm uppercase">
+                    <span className="bg-background px-2 text-muted-foreground">Transaction Details</span>
+                </div>
+            </div>
+
+            <div className="grid gap-6">
+                {/* From Address Card */}
+                <div className="rounded-xl border bg-card p-6 shadow-sm">
+                    <div className="flex flex-col gap-4">
+                        <div className="flex items-center justify-between">
+                            <Label className="text-sm font-medium text-muted-foreground">From</Label>
+                            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                <Wallet className="h-4 w-4 text-primary" />
+                            </div>
                         </div>
-                        <div>
-                            {senderName && <div className="font-mono text-sm">{senderName}</div>}
-                            <span className="font-mono text-sm">
+                        <div className="space-y-1">
+                            {senderName && (
+                                <div className="font-medium text-sm text-foreground">{senderName}</div>
+                            )}
+                            <div className="font-mono text-sm text-muted-foreground">
                                 {truncateAddress(senderAddress)}
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid gap-2">
-                    <Label className="text-sm font-medium">Destination Type</Label>
+                {/* Destination Section */}
+                <div className="space-y-4">
                     <RadioGroup 
                         value={addressType} 
                         onValueChange={(value: string) => {
@@ -100,74 +113,90 @@ export const TransactionForm = ({
                             setError(null);
                             setResolvedAddress(null);
                         }}
-                        className="flex gap-4"
+                        className="grid grid-cols-2 gap-4"
                     >
-                        <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="address" id="address" />
-                            <Label htmlFor="address">Wallet Address</Label>
+                        <div className={cn(
+                            "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
+                            addressType === 'address' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
+                        )}>
+                            <RadioGroupItem value="address" id="address" className="sr-only" />
+                            <Wallet className="h-6 w-6 mb-2" />
+                            <Label htmlFor="address" className="font-medium">Wallet Address</Label>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="ocid" id="ocid" />
-                            <Label htmlFor="ocid">OCID</Label>
+                        <div className={cn(
+                            "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
+                            addressType === 'ocid' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
+                        )}>
+                            <RadioGroupItem value="ocid" id="ocid" className="sr-only" />
+                            <ArrowRight className="h-6 w-6 mb-2" />
+                            <Label htmlFor="ocid" className="font-medium">OCID</Label>
                         </div>
                     </RadioGroup>
-                </div>
 
-                {addressType === 'address' ? (
-                    <div className="grid gap-2">
-                        <Label htmlFor="destination" className="text-sm font-medium">
-                            Destination Address
-                        </Label>
-                        <Input
-                            id="destination"
-                            placeholder="0x..."
-                            value={destinationAddress}
-                            onChange={(e) => setDestination(e.target.value)}
-                            className="font-mono"
-                        />
-                    </div>
-                ) : (
-                    <div className="grid gap-2">
-                        <Label htmlFor="ocid" className="text-sm font-medium">
-                            OCID
-                        </Label>
-                        <div className="flex gap-2">
+                    {addressType === 'address' ? (
+                        <div className="space-y-2">
+                            <Label htmlFor="destination" className="text-sm font-medium">
+                                Destination Address
+                            </Label>
                             <Input
-                                id="ocid"
-                                placeholder="Enter OCID"
-                                value={ocid}
-                                onChange={(e) => setOcid(e.target.value)}
+                                id="destination"
+                                placeholder="0x..."
+                                value={destinationAddress}
+                                onChange={(e) => setDestination(e.target.value)}
                                 className="font-mono"
                             />
-                            <Button 
-                                type="button" 
-                                onClick={handleOcidLookup}
-                                disabled={isLoading || !ocid.trim()}
-                                size="sm"
-                            >
-                                <Repeat className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
-                                <span className="ml-2">Lookup</span>
-                            </Button>
                         </div>
-                        
-                        {resolvedAddress && (
-                            <div className="mt-2 p-2 bg-green-50 border border-green-200 rounded-md">
-                                <span className="text-xs font-medium text-green-800">Resolved address: </span>
-                                <span className="text-xs font-mono">{truncateAddress(resolvedAddress)}</span>
+                    ) : (
+                        <div className="space-y-2">
+                            <Label htmlFor="ocid" className="text-sm font-medium">
+                                OCID
+                            </Label>
+                            <div className="flex gap-2">
+                                <Input
+                                    id="ocid"
+                                    placeholder="Enter OCID"
+                                    value={ocid}
+                                    onChange={(e) => setOcid(e.target.value)}
+                                    className="font-mono"
+                                />
+                                <Button 
+                                    onClick={handleOcidLookup}
+                                    disabled={isLoading || !ocid.trim()}
+                                    variant="outline"
+                                    className="min-w-[100px]"
+                                >
+                                    <Repeat className={`h-4 w-4 mr-2 ${isLoading ? 'animate-spin' : ''}`} />
+                                    Lookup
+                                </Button>
                             </div>
-                        )}
-                        
-                        {error && (
-                            <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
-                                <span className="text-xs text-red-600">{error}</span>
-                            </div>
-                        )}
-                    </div>
-                )}
+                            
+                            {resolvedAddress && (
+                                <div className="mt-2 p-3 bg-primary/5 rounded-lg border border-primary/10">
+                                    <div className="flex items-center gap-2">
+                                        <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                            <Wallet className="h-3 w-3 text-primary" />
+                                        </div>
+                                        <div>
+                                            <div className="text-xs font-medium text-muted-foreground">Resolved address</div>
+                                            <div className="font-mono text-sm">{truncateAddress(resolvedAddress)}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            
+                            {error && (
+                                <div className="mt-2 p-3 bg-destructive/5 rounded-lg border border-destructive/10">
+                                    <span className="text-sm text-destructive">{error}</span>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
 
-                <div className="grid gap-2">
+                {/* Amount Section */}
+                <div className="space-y-2">
                     <Label htmlFor="amount" className="text-sm font-medium">
-                        Amount (ETH)
+                        Amount
                     </Label>
                     <div className="relative">
                         <Input
@@ -176,35 +205,36 @@ export const TransactionForm = ({
                             placeholder="0.0"
                             value={amount}
                             onChange={(e) => setAmountValue(e.target.value)}
-                            className="pr-12"
+                            className="pr-16"
                         />
-                        <div className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
+                        <div className="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-1 bg-muted rounded text-sm font-medium">
                             ETH
                         </div>
                     </div>
                 </div>
             </div>
 
-            <DialogFooter>
+            <DialogFooter className="gap-3">
                 <Button
-                    variant="ghost"
+                    variant="outline"
                     onClick={() => {
                         setOpen(false);
                         setDestinationAddress("");
                         setAmount("");
                     }}
+                    className="flex-1"
                 >
                     Cancel
                 </Button>
                 <Button
                     onClick={handleSendTransaction}
                     disabled={(addressType === 'ocid' && !resolvedAddress) || isLoading}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="flex-1 bg-primary hover:bg-primary/90"
                 >
                     <Send className="w-4 h-4 mr-2" />
-                    Send Transaction
+                    Send
                 </Button>
             </DialogFooter>
-        </>
+        </div>
     );
 };

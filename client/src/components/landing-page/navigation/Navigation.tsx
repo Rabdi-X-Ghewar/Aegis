@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Glasses as Sunglasses } from "lucide-react";
 import { HoverButton } from "@/components/ui/hover-button";
+import Login from "@/components/Login";
 
 const Navigation = () => {
   return (
@@ -19,7 +20,7 @@ const Navigation = () => {
             <Button variant="ghost" className="text-[#c0ff00] hover:text-white">
               Docs
             </Button>
-            <HoverButton className="text-[#c0ff00]">Get Started</HoverButton>
+            <Login />
           </div>
         </div>
       </div>
