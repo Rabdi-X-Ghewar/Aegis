@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import dayjs from "dayjs";
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -32,8 +34,13 @@ export function createLinkingMessage(walletAddress: string, ocid: string): { mes
   return { message, timestamp };
 }
 
-
+export const moment = dayjs;
+export const formatAgentName = (name: string) => {
+  return name.substring(0, 2);
+}
 export function formatWalletAddress(address: string): string {
   if (!address || address.length < 10) return address;
   return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+
+
 }

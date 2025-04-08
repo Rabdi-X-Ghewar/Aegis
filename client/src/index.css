@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 43 38% 92%; /* Cream background */
+    --foreground: 25 40% 25%; /* Brown text */
+    --card: 43 38% 92%;
+    --card-foreground: 25 40% 25%;
+    --popover: 43 38% 92%;
+    --popover-foreground: 25 40% 25%;
+    --primary: 25 70% 40%; /* Darker brown for primary elements */
+    --primary-foreground: 43 38% 92%;
+    --secondary: 30 30% 80%; /* Lighter brown for secondary elements */
+    --secondary-foreground: 25 40% 25%;
+    --muted: 30 20% 85%;
+    --muted-foreground: 25 30% 35%;
+    --accent: 25 50% 50%; /* Medium brown for accents */
+    --accent-foreground: 43 38% 92%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142 76% 36%;
+    --destructive-foreground: 43 38% 92%;
+    --border: 25 30% 60%; /* Brown border */
+    --input: 30 20% 85%;
+    --ring: 25 70% 40%;
   }
 }
 
@@ -31,8 +31,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-
 
 @layer base {
   * {
