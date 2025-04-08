@@ -71,7 +71,7 @@ const AgentHub = () => {
                             <h1 className="text-xl font-bold">{query?.data?.character?.name} Overview</h1>
                         </div>
                         <div className="flex-1 overflow-hidden px-4 pb-4">
-                            <div className="bg-white rounded-2xl shadow-sm h-full overflow-auto">
+                            <div className="bg-background rounded-2xl shadow-sm h-full overflow-auto">
                                 {character && <Overview character={character} />}
                             </div>
                         </div>
@@ -83,11 +83,11 @@ const AgentHub = () => {
                         <PageTitle title="Agents" />
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {agents?.map((agent: { id: UUID; name: string }) => (
-                                <Card key={agent.id} className="rounded-2xl border-zinc-950 shadow-sm overflow-hidden">
-                                    <CardHeader className="bg-white">
+                                <Card key={agent.id} className="rounded-2xl border-border shadow-sm overflow-hidden">
+                                    <CardHeader className="bg-background">
                                         <CardTitle>{agent?.name}</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="bg-white pt-2">
+                                    <CardContent className="bg-background pt-2">
                                         <div className="rounded-xl bg-muted aspect-square w-full grid place-items-center overflow-hidden">
                                             <Avatar className="w-full h-full rounded-none">
                                                 <AvatarImage 
@@ -101,7 +101,7 @@ const AgentHub = () => {
                                             </Avatar>
                                         </div>
                                     </CardContent>
-                                    <CardFooter className="bg-white pt-0">
+                                    <CardFooter className="bg-background pt-0">
                                         <div className="flex items-center gap-4 w-full">
                                             <Button
                                                 variant="outline"
@@ -137,8 +137,8 @@ const AgentHub = () => {
     return (
         <TooltipProvider delayDuration={0}>
             <SidebarProvider>
-                <div className="flex relative h-screen w-full overflow-hidden bg-gray-50">
-                    <div className="flex-1 overflow-hidden rounded-2xl m-4 bg-white shadow-sm">
+                <div className="flex relative h-screen w-full overflow-hidden bg-background">
+                    <div className="flex-1 overflow-hidden rounded-2xl m-4 bg-background shadow-sm">
                         <div className="h-full">
                             {renderMainContent()}
                         </div>

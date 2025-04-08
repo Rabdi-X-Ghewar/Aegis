@@ -177,7 +177,7 @@ export default function Page({ agentId, character }: ChatProps) {
 
     return (
         <div className="flex flex-col w-full h-full">
-            <div className="flex-1 overflow-hidden rounded-2xl bg-gray-50">
+            <div className="flex-1 overflow-hidden rounded-2xl bg-background">
                 <ChatMessageList 
                     scrollRef={scrollRef}
                     isAtBottom={isAtBottom}
@@ -308,7 +308,7 @@ export default function Page({ agentId, character }: ChatProps) {
                             <div className="relative rounded-xl border p-2">
                                 <Button
                                     onClick={() => setSelectedFile(null)}
-                                    className="absolute -right-2 -top-2 size-6 rounded-full shadow-sm bg-white"
+                                    className="absolute -right-2 -top-2 size-6 rounded-full shadow-sm bg-background "
                                     variant="outline"
                                     size="icon"
                                 >
@@ -330,9 +330,9 @@ export default function Page({ agentId, character }: ChatProps) {
                         value={input}
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setInput(e.target.value)}
                         placeholder="Type your message here..."
-                        className="min-h-12 resize-none overflow-auto rounded-2xl bg-white border-0 p-4 shadow-none focus-visible:ring-0"
+                        className="min-h-12 resize-none overflow-auto rounded-tl-2xl rounded-tr-2xl bg-background border-0 p-4 shadow-none focus-visible:ring-0"
                     />
-                    <div className="flex items-center p-3 pt-0">
+                    <div className="flex items-center p-3 pt-0 bg-background rounded-b-2xl">
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <div>
@@ -346,7 +346,7 @@ export default function Page({ agentId, character }: ChatProps) {
                                             }
                                         }}
                                     >
-                                        <Paperclip className="size-4" />
+                                        <Paperclip className="size-4 text white" />
                                         <span className="sr-only">
                                             Attach file
                                         </span>

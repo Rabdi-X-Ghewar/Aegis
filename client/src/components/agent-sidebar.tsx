@@ -15,7 +15,7 @@ export function AgentSidebar({ agents, selectedAgentId, character, onAgentSelect
     return (
         <div className="w-64 h-full bg-background p-4 flex flex-col gap-4">
             {/* Available Agents Section */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1">
+            <div className="bg-background rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1">
                 <div className="p-4 border-b flex items-center justify-between">
                     <h2 className="font-semibold">Available Agents</h2>
                     <span className="text-sm text-muted-foreground">{agents.length} agents</span>
@@ -48,7 +48,7 @@ export function AgentSidebar({ agents, selectedAgentId, character, onAgentSelect
 
             {/* Agent Info Section */}
             {character && (
-                <div className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1">
+                <div className="bg-background rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1">
                     <div className="p-4 border-b flex items-center justify-between">
                         <h2 className="font-semibold">Agent Info</h2>
                         <button className="text-muted-foreground rounded-full hover:bg-muted p-1">
