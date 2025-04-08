@@ -106,33 +106,39 @@ export const TransactionForm = ({
 
                 {/* Destination Section */}
                 <div className="space-y-4">
-                    <RadioGroup 
+                <RadioGroup 
                         value={addressType} 
-                        onValueChange={(value: string) => {
+                        onValueChange={(value) => {
                             setAddressType(value as 'address' | 'ocid');
                             setError(null);
                             setResolvedAddress(null);
                         }}
                         className="grid grid-cols-2 gap-4"
                     >
-                        <div className={cn(
-                            "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
-                            addressType === 'address' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
-                        )}>
+                        <Label
+                            htmlFor="address"
+                            className={cn(
+                                "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
+                                addressType === 'address' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
+                            )}
+                        >
                             <RadioGroupItem value="address" id="address" className="sr-only" />
                             <Wallet className="h-6 w-6 mb-2" />
-                            <Label htmlFor="address" className="font-medium">Wallet Address</Label>
-                        </div>
-                        <div className={cn(
-                            "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
-                            addressType === 'ocid' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
-                        )}>
+                            <span className="font-medium">Wallet Address</span>
+                        </Label>
+
+                        <Label
+                            htmlFor="ocid"
+                            className={cn(
+                                "flex flex-col items-center justify-center rounded-lg border-2 p-4 cursor-pointer transition-colors",
+                                addressType === 'ocid' ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50"
+                            )}
+                        >
                             <RadioGroupItem value="ocid" id="ocid" className="sr-only" />
                             <ArrowRight className="h-6 w-6 mb-2" />
-                            <Label htmlFor="ocid" className="font-medium">OCID</Label>
-                        </div>
+                            <span className="font-medium">OCID</span>
+                        </Label>
                     </RadioGroup>
-
                     {addressType === 'address' ? (
                         <div className="space-y-2">
                             <Label htmlFor="destination" className="text-sm font-medium">
