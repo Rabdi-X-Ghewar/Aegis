@@ -4,31 +4,47 @@
 
 @layer base {
   :root {
-    --background: 43 38% 92%; /* Cream background */
-    --foreground: 25 40% 25%; /* Brown text */
-    --card: 43 38% 92%;
-    --card-foreground: 25 40% 25%;
-    --popover: 43 38% 92%;
-    --popover-foreground: 25 40% 25%;
-    --primary: 25 70% 40%; /* Darker brown for primary elements */
-    --primary-foreground: 43 38% 92%;
-    --secondary: 30 30% 80%; /* Lighter brown for secondary elements */
-    --secondary-foreground: 25 40% 25%;
-    --muted: 30 20% 85%;
-    --muted-foreground: 25 30% 35%;
-    --accent: 25 50% 50%; /* Medium brown for accents */
-    --accent-foreground: 43 38% 92%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 43 38% 92%;
-    --border: 25 30% 60%; /* Brown border */
-    --input: 30 20% 85%;
-    --ring: 25 70% 40%;
+    --background: 0 0% 4%;
+    --foreground: 155 40% 90%;
+    --card: 0 0% 6%;
+    --card-foreground: 155 40% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 155 40% 90%;
+    --primary: 160 95% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 155 50% 15%;
+    --secondary-foreground: 155 40% 90%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 155 30% 70%;
+    --accent: 160 95% 45%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 60% 30%;
+    --destructive-foreground: 0 0% 90%;
+    --border: 155 50% 15%;
+    --input: 155 50% 15%;
+    --ring: 160 95% 45%;
   }
-}
 
-@layer base {
-  body {
-    @apply bg-background text-foreground;
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 155 40% 90%;
+    --card: 0 0% 6%;
+    --card-foreground: 155 40% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 155 40% 90%;
+    --primary: 160 95% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 155 50% 15%;
+    --secondary-foreground: 155 40% 90%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 155 30% 70%;
+    --accent: 160 95% 45%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 60% 30%;
+    --destructive-foreground: 0 0% 90%;
+    --border: 155 50% 15%;
+    --input: 155 50% 15%;
+    --ring: 160 95% 45%;
   }
 }
 

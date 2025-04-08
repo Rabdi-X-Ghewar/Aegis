@@ -254,7 +254,6 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                                     <ChatTtsButton
                                                         agentId={agentId}
                                                         text={message?.text}
-                                                        className="rounded-full"
                                                     />
                                                 </div>
                                             ) : null}

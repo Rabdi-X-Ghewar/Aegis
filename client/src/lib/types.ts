@@ -9,6 +9,35 @@ import {
     holesky
 } from 'viem/chains';
 
+import { defineChain } from 'viem';
+const openCampusChain = defineChain({
+    id: 656476,
+    network: "Open Campus Codex",
+    name: "Open Campus Codext",
+    nativeCurrency: {
+        name: "EDU",
+        symbol: "EDU",
+        decimals: 18,
+    },
+    rpcUrls: {
+        public: {
+            http: ["https://rpc.open-campus-codex.gelato.digital"],
+        },
+        default: {
+            http: ["https://rpc.open-campus-codex.gelato.digital"],
+        },
+    },
+    blockExplorers: {
+        default: {
+            name: "Block Scout",
+            url: "https://opencampus-codex.blockscout.com/",
+        },
+    },
+    contracts: {
+    },
+    testnet: true,
+})
+
 export type WalletBalance = {
     address: string;
     clientType?: string;
@@ -26,7 +55,8 @@ export const CHAIN_MAP = {
     polygon: polygon,
     arbitrum: arbitrum,
     optimism: optimism,
-    holesky: holesky
+    holesky: holesky,
+    openCampus: openCampusChain,
 };
 
 export interface LinkWalletParams {
@@ -35,4 +65,4 @@ export interface LinkWalletParams {
     signature: string;
     message: string;
     timestamp: number;
-  }
+}

@@ -3,7 +3,7 @@ import { TooltipProvider } from "../components/ui/tooltip";
 import { SidebarProvider } from "../components/ui/sidebar";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api";
-import { User, Cog, ArrowLeft } from "lucide-react";
+import {  Cog, ArrowLeft } from "lucide-react";
 import type { UUID } from "@elizaos/core";
 import Chat from "../components/chat";
 import Overview from "../components/overview";
@@ -71,7 +71,7 @@ const AgentHub = () => {
                         </div>
                         <div className="flex-1 overflow-hidden px-4 pb-4">
                             <div className="bg-white rounded-2xl shadow-sm h-full overflow-auto">
-                                <Overview character={character} />
+                                {character && <Overview character={character} />}
                             </div>
                         </div>
                     </div>

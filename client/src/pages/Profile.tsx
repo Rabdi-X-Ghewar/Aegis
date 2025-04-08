@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { createWalletClient, custom, Hex, parseEther } from 'viem';
 import { ethers } from "ethers";
 import { useOCAuth } from "@opencampus/ocid-connect-js";
-import { CHAIN_MAP, WalletBalance } from "../lib/types";
+import { WalletBalance } from "../lib/types";
 import { NetworkSelector } from "../components/NetworkSelector";
 import { PageHeader } from "../components/PageHeader";
 import { ServerWallet } from "../components/ServerWallet";
@@ -15,6 +15,35 @@ import { OCIDWallet } from "../components/OCIDWallet";
 import { WalletList } from "../components/WalletList";
 import { TransactionDialog } from "../components/TransactionDialog";
 
+
+import { defineChain } from "viem";
+const openCampusChain = defineChain({
+    id: 656476,
+    network: "Open Campus Codex",
+    name: "Open Campus Codext",
+    nativeCurrency: {
+        name: "EDU",
+        symbol: "EDU",
+        decimals: 18,
+    },
+    rpcUrls: {
+        public: {
+            http: ["https://rpc.open-campus-codex.gelato.digital"],
+        },
+        default: {
+            http: ["https://rpc.open-campus-codex.gelato.digital"],
+        },
+    },
+    blockExplorers: {
+        default: {
+            name: "Block Scout",
+            url: "https://opencampus-codex.blockscout.com/",
+        },
+    },
+    contracts: {
+    },
+    testnet: true,
+})
 
 
 const Profile = () => {
@@ -29,7 +58,7 @@ const Profile = () => {
     const [destinationAddress, setDestinationAddress] = useState('');
     const [amount, setAmount] = useState('');
     const [open, setOpen] = useState(false);
-    const [selectedNetwork, setSelectedNetwork] = useState<NetworkKey>('sepolia');
+    const [selectedNetwork, setSelectedNetwork] = useState<NetworkKey>('openCampus');
     const [ocidBalance, setOcidBalance] = useState<number | null>(null);
 
     useEffect(() => {
@@ -134,7 +163,7 @@ const Profile = () => {
                 }
 
                 // Get the corresponding chain for the selected network
-                const chain = CHAIN_MAP[selectedNetwork as keyof typeof CHAIN_MAP];
+                const chain = openCampusChain;
                 console.log("Selected chain:", chain);
                 if (!chain) {
                     toast.error(`Unsupported network: ${selectedNetwork}`);

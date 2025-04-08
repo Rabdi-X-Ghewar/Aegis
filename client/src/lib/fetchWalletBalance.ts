@@ -42,6 +42,12 @@ export const SUPPORTED_NETWORKS = {
         name: "Optimism Mainnet",
         infuraNetwork: "optimism-mainnet", 
         symbol: "ETH"
+    },
+
+    openCampus: {
+        name: "Open Campus Codex",
+        infuraNetwork: "edu-chain",
+        symbol: "EDU"
     }
 };
 

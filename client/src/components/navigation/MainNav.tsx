@@ -3,17 +3,17 @@ import { UserCircle, WalletIcon } from "lucide-react"
 import { usePrivy, useWallets } from "@privy-io/react-auth"
 import { Button } from "../ui/button"
 import { useCreateWallet } from '@privy-io/react-auth';
-import { createWalletClient, custom, Hex, parseEther } from 'viem';
-import { sepolia } from 'viem/chains';
 import { useOCAuth } from '@opencampus/ocid-connect-js';
 import { useState, useEffect } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-import { 
-    linkWalletToOCID, 
-    getWalletForOCID, 
+import {
+    linkWalletToOCID,
+    getWalletForOCID,
     unlinkWalletFromOCID
 } from "../..//apiClient";
 import { createLinkingMessage, formatWalletAddress } from "../../lib/utils";
+
+
 
 
 
@@ -44,7 +44,7 @@ export function MainNav() {
 
     const fetchLinkedWallet = async () => {
         if (!OCId) return;
-        
+
         try {
             const response = await getWalletForOCID(OCId);
             if (response.success && response.walletAddress) {
@@ -62,18 +62,18 @@ export function MainNav() {
             console.error('No wallet selected for signing');
             return;
         }
-        
+
         const wallet = wallets[selectedSigningWalletIndex];
         const provider = await wallet?.getEthereumProvider();
         const address = wallet?.address;
-        
+
         if (!provider || !address) {
             console.error('Provider or address not available');
             return;
         }
-        
+
         const message = 'This is the message I am signing';
-        
+
         try {
             const signature = await provider?.request({
                 method: 'personal_sign',
@@ -90,7 +90,7 @@ export function MainNav() {
         setSelectedWalletIndex(parseInt(index));
         setLinkError(null);
     };
-    
+
     const handleSigningWalletSelect = (index: string) => {
         setSelectedSigningWalletIndex(parseInt(index));
     };
@@ -103,12 +103,12 @@ export function MainNav() {
 
         setIsLinking(true);
         setLinkError(null);
-        
+
         try {
             const selectedWallet = wallets[selectedWalletIndex];
             const provider = await selectedWallet?.getEthereumProvider();
             const address = selectedWallet?.address;
-            
+
             if (!provider || !address) {
                 setLinkError('Provider or address not available');
                 setIsLinking(false);
@@ -117,7 +117,7 @@ export function MainNav() {
 
             // Create a message that includes the OCID to establish the link
             const { message, timestamp } = createLinkingMessage(address, OCId);
-            
+
             // Sign the message to prove ownership of the wallet
             const signature = await provider?.request({
                 method: 'personal_sign',
@@ -151,7 +151,7 @@ export function MainNav() {
 
     const unlinkWallet = async () => {
         if (!OCId || !linkedWalletAddress) return;
-        
+
         try {
             const response = await unlinkWalletFromOCID(OCId);
             if (response.success) {
@@ -164,43 +164,6 @@ export function MainNav() {
             console.error('Error unlinking wallet:', error);
         }
     };
-
-    const transaction = async () => {
-        if (selectedSigningWalletIndex === null || !wallets[selectedSigningWalletIndex]) {
-            console.error('No wallet selected for transaction');
-            return;
-        }
-        
-        const wallet = wallets[selectedSigningWalletIndex];
-        
-        try {
-            await wallet?.switchChain(sepolia.id);
-
-            const provider = await wallet?.getEthereumProvider();
-            if (!provider) {
-                console.error('Ethereum provider is undefined');
-                return;
-            }
-            
-            const walletClient = createWalletClient({
-                account: wallet?.address as Hex,
-                chain: sepolia,
-                transport: custom(provider),
-            });
-            
-            const [address] = await walletClient.getAddresses();
-
-            const hash = await walletClient.sendTransaction({
-                account: address,
-                to: '0x1029BBd9B780f449EBD6C74A615Fe0c04B61679c',
-                value: parseEther('0.0001')
-            });
-
-            console.log('Transaction hash:', hash);
-        } catch (error) {
-            console.error('Error sending transaction:', error);
-        }
-    }
 
     const handleOCLogin = () => {
         if (ocAuth) {
@@ -241,7 +204,7 @@ export function MainNav() {
                                             <div className="flex flex-col space-y-3 w-64">
                                                 <span className="font-semibold">OCConnect ID:</span>
                                                 <span className="text-sm text-muted-foreground">{OCId}</span>
-                                                
+
                                                 {linkedWalletAddress ? (
                                                     <>
                                                         <div className="pt-2 border-t">
@@ -249,9 +212,9 @@ export function MainNav() {
                                                             <span className="text-sm text-muted-foreground block mt-1 break-all">
                                                                 {linkedWalletAddress}
                                                             </span>
-                                                            <Button 
-                                                                variant="outline" 
-                                                                size="sm" 
+                                                            <Button
+                                                                variant="outline"
+                                                                size="sm"
                                                                 className="mt-2"
                                                                 onClick={unlinkWallet}
                                                             >
@@ -281,7 +244,7 @@ export function MainNav() {
                                                                         {linkError}
                                                                     </div>
                                                                 )}
-                                                                <Button 
+                                                                <Button
                                                                     className="w-full mt-2"
                                                                     onClick={linkWalletToOCIDHandler}
                                                                     disabled={selectedWalletIndex === null || isLinking}
@@ -332,12 +295,12 @@ export function MainNav() {
                             ) : (
                                 <span className="text-sm text-muted-foreground">No wallets connected</span>
                             )}
-                            
+
                             {wallets.length > 0 && (
                                 <div className="pt-2 border-t">
                                     <span className="font-semibold mb-2 block">Select wallet for operations:</span>
-                                    <Select 
-                                        value={selectedSigningWalletIndex !== null ? selectedSigningWalletIndex.toString() : undefined} 
+                                    <Select
+                                        value={selectedSigningWalletIndex !== null ? selectedSigningWalletIndex.toString() : undefined}
                                         onValueChange={handleSigningWalletSelect}
                                     >
                                         <SelectTrigger>
@@ -363,15 +326,15 @@ export function MainNav() {
                         <Button variant="outline" className="w-full">Create Wallet</Button>
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={sign}>
-                        <Button 
+                        <Button
                             className="w-full"
                             disabled={selectedSigningWalletIndex === null}
                         >
                             Sign
                         </Button>
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={transaction}>
-                        <Button 
+                    <DropdownMenuItem >
+                        <Button
                             className="w-full"
                             disabled={selectedSigningWalletIndex === null}
                         >

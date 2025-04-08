@@ -11,8 +11,8 @@ import TransactionPage from './Transactions';
 import StakeTokens from './StakeTokens';
 import WalletTracker from "./WalletTracker";
 import AgentHub from "./AgentHub";
-import Chat from "../routes/chat";
-import Overview from "../routes/overview";
+// import Chat from "../routes/chat";
+// import Overview from "../routes/overview";
 
 
 const HomeAfterLogin = () => {
