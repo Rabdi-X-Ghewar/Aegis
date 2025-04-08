@@ -15,11 +15,11 @@ const Stats = () => {
           <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">$75bn+</div>
         </div>
         <div className="text-left">
-          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">Liquidity sources</h3>
+          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">Total Features</h3>
           <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">15</div>
         </div>
         <div className="text-left">
-          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">13 networks</h3>
+          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">13 agents</h3>
           <div className="grid grid-cols-4 gap-2">
             {Array(12).fill(0).map((_, i) => (
               <div key={i} className="w-8 h-8 bg-[#c0ff00] rounded-full" />
