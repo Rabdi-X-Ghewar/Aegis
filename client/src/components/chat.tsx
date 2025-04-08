@@ -9,7 +9,7 @@ import { ChatMessageList } from "@/components/ui/chat/chat-message-list";
 import { useTransition, animated, type AnimatedProps } from "@react-spring/web";
 import { Paperclip, Send, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { Content, UUID } from "@elizaos/core";
+import type { Content, UUID,Character } from "@elizaos/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api";
 import { cn, moment } from "@/lib/utils";
@@ -36,7 +36,12 @@ type AnimatedDivProps = AnimatedProps<{ style: React.CSSProperties }> & {
     children?: React.ReactNode;
 };
 
-export default function Page({ agentId }: { agentId: UUID }) {
+interface ChatProps {
+    agentId: UUID;
+    character?: Character;
+}
+
+export default function Page({ agentId, character }: ChatProps) {
     const { toast } = useToast();
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [input, setInput] = useState("");
@@ -200,7 +205,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                 >
                                     {message?.user !== "user" ? (
                                         <Avatar className="size-8 p-1 border rounded-full select-none">
-                                            <AvatarImage src="/eliza-icon.jpg" className="rounded-full"/>
+                                            <AvatarImage src={`${character?.name}.jpeg`} className="rounded-full"/>
                                         </Avatar>
                                     ) : null}
                                     <div className={`flex flex-col ${variant === "sent" ? "items-end" : "items-start"}`}>
