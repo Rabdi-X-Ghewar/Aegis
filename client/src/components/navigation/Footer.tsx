@@ -19,7 +19,7 @@ export default function Footer() {
             ))}
           </nav>
           <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
-            Designed & Developed Team Kairos. Copyright AgentPlutus
+            Designed & Developed Team Kairos. Copyright Agent AEGIS
           </p>
         </div>
       </footer>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Glasses as Sunglasses } from "lucide-react";
 import Login from "@/components/Login";
+import logonav from "@/assets/aegislogo.png"
 
 const Navigation = () => {
   return (
@@ -8,8 +9,8 @@ const Navigation = () => {
       <div className="max-w-10xl mx-auto px-8 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <Sunglasses className="w-8 h-6 text-[#c0ff00]" />
-            <span className="text-xl font-bold text-white">Quantum</span>
+              <img src={logonav} alt="Aegislogo" className="h-8 w-8 object-contain" />
+            <span className="text-xl font-bold text-white">Aegis</span>
           </div>
           
           <div className="flex items-center gap-6">

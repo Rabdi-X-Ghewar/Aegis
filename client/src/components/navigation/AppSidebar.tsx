@@ -17,6 +17,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "../ui/button";
 import { Link } from "react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import logo from "@/assets/aegislogo.png"
 
 const sidebarItems = [
     { icon: LayoutGrid, label: "Dashboard", href: "/profile" },
@@ -42,8 +43,8 @@ export function AppSidebar() {
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild size="lg">
                             <Link to="/" className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary shadow-sm">
-                                    <Shield className="h-6 w-6 text-primary-foreground" />
+                                <div className="flex h-10 w-10 items-center justify-center rounded-lg shadow-sm">
+                                    <img src={logo} alt="Aegislogo" />
                                 </div>
                                 <span className="font-semibold text-xl text-foreground">Aegis</span>
                             </Link>

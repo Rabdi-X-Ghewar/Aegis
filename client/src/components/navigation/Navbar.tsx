@@ -26,7 +26,7 @@ const Navbar = () => {
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
             alt="Flowers & Saints Logo"
           />
-          <span className="text-lg font-bold text-foreground">PLUTUS</span>
+          <span className="text-lg font-bold text-foreground">AEGIS</span>
         </div>
 
         {/* External links */}
