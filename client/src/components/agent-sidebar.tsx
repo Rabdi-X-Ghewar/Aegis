@@ -16,7 +16,7 @@ export function AgentSidebar({ agents, selectedAgentId, character, onAgentSelect
         <div className="w-64 h-full bg-background p-4 flex flex-col gap-4">
             {/* Available Agents Section */}
             <div className="bg-background rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1">
-                <div className="p-4 border-b flex items-center justify-between">
+                <div className="p-4 border-b border-l flex items-center justify-between">
                     <h2 className="font-semibold">Available Agents</h2>
                     <span className="text-sm text-muted-foreground">{agents.length} agents</span>
                 </div>

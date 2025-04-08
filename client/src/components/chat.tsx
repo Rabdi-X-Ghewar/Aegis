@@ -23,6 +23,7 @@ import type { IAttachment } from "@/types";
 import { AudioRecorder } from "./audio-recorder";
 import { Badge } from "./ui/badge";
 import { useAutoScroll } from "./ui/chat/hooks/useAutoScroll";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 type ExtraContentFields = {
     user: string;
@@ -324,14 +325,16 @@ export default function Page({ agentId, character }: ChatProps) {
                             </div>
                         </div>
                     ) : null}
+                 
                    <ChatInput
                         ref={inputRef}
                         onKeyDown={handleKeyDown}
                         value={input}
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setInput(e.target.value)}
                         placeholder="Type your message here..."
-                        className="min-h-12 resize-none overflow-auto rounded-tl-2xl rounded-tr-2xl bg-background border-0 p-4 shadow-none focus-visible:ring-0"
+                        className="min-h-12 resize-none overflow-hidden rounded-tl-2xl rounded-tr-2xl bg-background border-0 p-4 shadow-none focus-visible:ring-0"
                     />
+                    
                     <div className="flex items-center p-3 pt-0 bg-background rounded-b-2xl">
                         <Tooltip>
                             <TooltipTrigger asChild>
