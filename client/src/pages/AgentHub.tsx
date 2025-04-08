@@ -144,7 +144,7 @@ const AgentHub = () => {
                         </div>
                     </div>
                     
-                    <div className="rounded-2xl m-4 mr-2 overflow-hidden shadow-sm">
+                    <div className="rounded-2xl m-4 mr-2 border-l overflow-hidden shadow-sm">
                         <AgentSidebar 
                             agents={agents ?? []}
                             selectedAgentId={selectedAgentId}
