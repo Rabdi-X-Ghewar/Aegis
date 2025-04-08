@@ -33,7 +33,7 @@ export function AgentSidebar({ agents, selectedAgentId, character, onAgentSelect
                                     onClick={() => onAgentSelect(agent.id)}
                                 >
                                     <Avatar className="h-10 w-10">
-                                        <AvatarImage src={`/avatars/${agent.id}.png`} />
+                                        <AvatarImage src={`${agent.name}.jpeg`} />
                                         <div className="flex h-full w-full items-center justify-center rounded-full bg-primary/10">
                                             <User className="h-5 w-5 text-primary" />
                                         </div>
@@ -61,7 +61,7 @@ export function AgentSidebar({ agents, selectedAgentId, character, onAgentSelect
                             <div className="p-4 pb-6">
                                 <div className="flex items-center gap-3 mb-4">
                                     <Avatar className="h-12 w-12">
-                                        <AvatarImage src={`/avatars/${character.id}.png`} />
+                                        <AvatarImage src={`${character.name}.jpeg`} />
                                         <div className="flex h-full w-full items-center justify-center rounded-full bg-primary/10">
                                             <User className="h-6 w-6 text-primary" />
                                         </div>

@@ -13,6 +13,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { formatAgentName } from "@/lib/utils";
 import { useState } from "react";
 import { AgentSidebar } from "@/components/agent-sidebar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const AgentHub = () => {
     const [selectedAgentId, setSelectedAgentId] = useState<UUID | null>(null);
@@ -51,7 +52,7 @@ const AgentHub = () => {
                             <h1 className="text-xl font-bold">Chat with {query?.data?.character?.name}</h1>
                         </div>
                         <div className="flex-1 overflow-hidden">
-                            <Chat agentId={selectedAgentId} />
+                        <Chat agentId={selectedAgentId} character={character} />
                         </div>
                     </div>
                 ) : null;
@@ -82,15 +83,22 @@ const AgentHub = () => {
                         <PageTitle title="Agents" />
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {agents?.map((agent: { id: UUID; name: string }) => (
-                                <Card key={agent.id} className="rounded-2xl border-none shadow-sm overflow-hidden">
+                                <Card key={agent.id} className="rounded-2xl border-zinc-950 shadow-sm overflow-hidden">
                                     <CardHeader className="bg-white">
                                         <CardTitle>{agent?.name}</CardTitle>
                                     </CardHeader>
                                     <CardContent className="bg-white pt-2">
-                                        <div className="rounded-xl bg-muted aspect-square w-full grid place-items-center">
-                                            <div className="text-6xl font-bold uppercase">
-                                                {formatAgentName(agent?.name)}
-                                            </div>
+                                        <div className="rounded-xl bg-muted aspect-square w-full grid place-items-center overflow-hidden">
+                                            <Avatar className="w-full h-full rounded-none">
+                                                <AvatarImage 
+                                                    src={`${agent.name}.jpeg`} 
+                                                    className="object-cover"
+                                                    alt={agent.name}
+                                                />
+                                                <AvatarFallback className="w-full h-full text-6xl font-bold uppercase">
+                                                    {formatAgentName(agent?.name)}
+                                                </AvatarFallback>
+                                            </Avatar>
                                         </div>
                                     </CardContent>
                                     <CardFooter className="bg-white pt-0">
