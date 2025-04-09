@@ -14,16 +14,18 @@ const SmarterTech = () => {
           Better prices.
         </h2>
         <div className="px-30 mt-20"> {/* Added more top margin */}
-        <p className="text-[#004d1a] text-4xl">
-          Market makers and solvers are scrapping it out to
-          <br />
-          get you the best prices from the widest range of
-          <br />
-          liquidity sources.
-        </p>
-        <HoverButton className="mt-12 bg-white text-[#004d1a] hover:bg-gray-100">
-          Get Started
-        </HoverButton>
+        <div className="pl-16">
+              <p className="text-[#004d1a] text-4xl">
+                Get access to opencampus and OCID enabled servies all in one  
+                <br />
+                unified, Get access to defi actions on different chains through 
+                <br />
+                agent characters.
+              </p>
+              <HoverButton className="mt-12 bg-white text-[#004d1a] hover:bg-gray-100">
+                Get Started
+              </HoverButton>
+            </div>
 
 
         <div className="flex gap-20 mt-24 items-start justify-between">

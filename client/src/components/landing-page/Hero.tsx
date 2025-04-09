@@ -12,8 +12,8 @@ const Hero = () => {
       <Navigation />
       <main className="relative min-h-screen flex flex-col items-start justify-center px-0">
         <div className="z-10 max-w-7xl pl-4">
-          <h1 className="text-[clamp(6rem,15vw,12rem)] font-bold leading-none mb-15 text-left">
-            <span className="text-[#c0ff00]">Make your crypto</span>
+          <h1 className="text-[clamp(5rem,12vw,10rem)] font-bold leading-none mb-24 text-left">
+            <span className="text-[#c0ff00]">Agentic Actions</span>
             <br />
             <div className="absolute inset-0 pointer-events-none">
           <div className="animate-float-1 absolute top-1/4 left-1/4">
@@ -32,10 +32,10 @@ const Hero = () => {
             </div>
           </div>
         </div>
-            <span className="text-[#c0ff00]">move with us</span>
+            <span className="text-[#c0ff00]">on Educhain</span>
           </h1>
-          <p className="text-[clamp(2rem,4vw,3rem)] text-[#c0ff00] mb-12 font-semibold">
-            Want to get the best prices in DeFi right now?
+          <p className="text-[clamp(2rem,3vw,2rem)] text-[#c0ff00] mb-12 mt-8 font-semibold pl-16">
+          Empowering Seamless Multi-Chain Interactions with OCID-Based Payments and EduChain Integration
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-24">
             <Button size="lg" className="bg-white text-black hover:bg-gray-200 text-lg px-8">

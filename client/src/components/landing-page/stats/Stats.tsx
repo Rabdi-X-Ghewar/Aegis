@@ -11,12 +11,12 @@ const Stats = () => {
           </div>
         </div>
         <div className="text-left">
-          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">Total volume</h3>
-          <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">$75bn+</div>
+          <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">Total Chains</h3>
+          <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">3</div>
         </div>
         <div className="text-left">
           <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">Total Features</h3>
-          <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">15</div>
+          <div className="text-[#c0ff00] text-6xl font-extrabold tracking-tight">5</div>
         </div>
         <div className="text-left">
           <h3 className="text-[#c0ff00] text-2xl mb-4 font-bold">13 agents</h3>
