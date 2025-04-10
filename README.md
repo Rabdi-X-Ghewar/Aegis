@@ -69,43 +69,6 @@
 
 ---
 
-## ⚙️ Getting Started
-
-### 🔧 Prerequisites
-
-```bash
-node >= 16.0.0
-npm >= 8.0.0
-```
-
-### 📦 Installation
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/Rabdi-X-Ghewar/Aegis.git
-cd Aegis
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Create your environment file:
-
-```bash
-cp .env.example .env
-```
-
-4. Run the development server:
-
-```bash
-npm run dev
-```
-
----
 
 ### Wallet Connection Flow
 1. Users authenticate using their OpenCampus ID (OCID)
@@ -158,28 +121,43 @@ We welcome contributions to Aegis! Please read our contributing guidelines befor
 1. Blockchain agents configured for each supported network
 2. Smart contracts manage inter-chain calls and state
 3. Transactions are validated and executed securely across chains
->>>>>>> f9fc9ad8083e6489643fe935795c11f0595f09c7
-
 ---
 
-## 📚 Use Cases
+## ⚙️ Getting Started
 
-### 🎓 Educational Institutions
-- Issue and verify academic credentials on-chain
-- Handle tuition and enrollment payments securely
-- Maintain student records with zero data leakage
+### 🔧 Prerequisites
 
-### 💳 Cross-Chain Payment Gateway
-- Enable token transfers between EduChain and other EVM chains
-- Act as a unified payment portal for educational DApps
-- Automate recurring fee cycles using smart contracts
+```bash
+node >= 16.0.0
+npm >= 8.0.0
+```
 
-### 📁 Decentralized Data Management
-- Store, retrieve, and share educational documents
-- Real-time access to verification status for employers or authorities
-- Comply with privacy and compliance standards using Web3 tech
+### 📦 Installation
 
----
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Rabdi-X-Ghewar/Aegis.git
+cd Aegis
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create your environment file:
+
+```bash
+cp .env.example .env
+```
+
+4. Run the development server:
+
+```bash
+npm run dev
+```
 
 ## 👨‍💻 Contributing
 
