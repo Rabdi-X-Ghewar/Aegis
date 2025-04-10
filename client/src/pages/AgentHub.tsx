@@ -79,7 +79,7 @@ const AgentHub = () => {
                 ) : null;
             default:
                 return (
-                    <div className="flex flex-col gap-4 h-full p-4">
+                    <div className="flex flex-col gap-4 h-full p-4 overflow-auto">
                         <PageTitle title="Agents" />
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {agents?.map((agent: { id: UUID; name: string }) => (

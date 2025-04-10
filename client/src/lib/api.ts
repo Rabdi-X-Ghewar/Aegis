@@ -1,6 +1,6 @@
 import type { UUID, Character } from "@elizaos/core";
 
-const BASE_URL ='http://localhost:3000';
+const BASE_URL = 'https://aegis-eliza.onrender.com';
 
 console.log({ BASE_URL });
 
@@ -20,9 +20,9 @@ const fetcher = async ({
         headers: headers
             ? headers
             : {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-              },
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
     };
 
     if (method === "POST") {
