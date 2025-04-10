@@ -13,9 +13,11 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center gap-6">
-            <Button variant="ghost" className="text-[#c0ff00] hover:text-white">
-              Features
-            </Button>
+          <a href="https://github.com/Rabdi-X-Ghewar/Aegis" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" className="text-[#c0ff00] hover:text-white">
+                Features
+              </Button>
+            </a>
             <Button variant="ghost" className="text-[#c0ff00] hover:text-white">
               Docs
             </Button>

@@ -12,10 +12,14 @@ Aegis represents a groundbreaking implementation of OCID-based payments on OpenC
 ## Key Features
 
 - **OCID-Based Wallet Integration**
-  - Seamless wallet connection through [OpenCampus ID (OCID)](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L168)
-  - [Linking](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L98) any wallet to your OCID
-  - Secure authentication and transaction signing on [Edu Chain](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/main.tsx#L68) with privy wallets.
-  - Unified wallet management interface
+    - Seamless wallet connection through [OpenCampus ID (OCID)](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L168)
+    - [Linking](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L98) any wallet to your OCID
+    - Secure authentication and transaction signing on [Edu Chain](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/main.tsx#L68) with privy wallets
+    - Unified wallet management interface
+    - Real-time OCID wallet balance tracking
+    - Direct transaction capabilities from OCID wallet
+    - Integrated address management and copying functionality
+    - Seamless interaction with EDU token transactions
 
 - **Multi-Chain Support**
   - Cross-chain transaction capabilities
@@ -92,11 +96,13 @@ npm run dev
 1. Users authenticate using their OpenCampus ID (OCID)
 2. OCID connects to their preferred wallet
 3. Wallet is authorized for transactions on EduChain
+
 ### Transaction Process
 1. User initiates transaction through Aegis interface
 2. OCID validates the transaction request
 3. Transaction is processed on EduChain
 4. Real-time confirmation and status updates
+
 ### Multi-Chain Agent Configuration
 1. Agents are configured for specific blockchain networks
 2. Smart contracts handle cross-chain communication
@@ -106,17 +112,20 @@ npm run dev
 ## Use Cases
 
 ### Educational Institutions
-- Secure credential issuance and verification
+- Transact using OCID wallet
 - Student payment management
 - Course enrollment transactions
+
 ### Cross-Chain Payments
 - Seamless token transfers between chains
 - Unified payment gateway for educational services
 - Automated fee processing
+
 ### Data Management
-- Secure storage of educational records
-- Real-time access to verification status
+- Secure storage of agent interactions
+- Real-time access to token rates
 - Automated compliance checking
+
 ## Contributing
 We welcome contributions to Aegis! Please read our contributing guidelines before submitting pull requests.
 
