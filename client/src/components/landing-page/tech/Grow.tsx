@@ -5,18 +5,18 @@ const Grow = () => {
         <div className="flex flex-col">
           <div className="max-w-3xl pl-0">
             <h2 className="text-[#ff6b00] text-left text-[clamp(5rem,12vw,14rem)] font-bold leading-tight mb-8">
-              Ape.<br />
-              Rebalance.<br />
-              Dump.
+              Transact.<br />
+              Chat.<br />
+              Learn.
             </h2>
           </div>
           
           <div className="max-w-3xl pl-4">
             <p className="text-[#ff6b00] text-[clamp(1.5rem,3vw,2rem)] mb-4">
-              Ever wanted to dump a bunch of tokens or buy a whole bag? It's a feature.
+              Ever wanted to interact with your faviourite chains.
             </p>
             <p className="text-[#ff6b00] text-[clamp(1.2rem,2vw,1.5rem)]">
-              Trade 2 or many tokens at once - it's fast and gas efficient!
+              Chat to any chains of your choice and get the latest updates on your favourite tokens.
             </p>
           </div>
         </div>

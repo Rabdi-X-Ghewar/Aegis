@@ -13,7 +13,7 @@ const Hero = () => {
       <main className="relative min-h-screen flex flex-col items-start justify-center px-0">
         <div className="z-10 max-w-7xl pl-4">
           <h1 className="text-[clamp(5rem,12vw,10rem)] font-bold leading-none mb-24 text-left">
-            <span className="text-[#c0ff00]">Agentic Actions</span>
+            <span className="text-[#c0ff00]">Agentic Characters</span>
             <br />
             <div className="absolute inset-0 pointer-events-none">
           <div className="animate-float-1 absolute top-1/4 left-1/4">
