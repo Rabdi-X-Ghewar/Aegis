@@ -12,9 +12,9 @@ Aegis represents a groundbreaking implementation of OCID-based payments on OpenC
 ## Key Features
 
 - **OCID-Based Wallet Integration**
-  - Seamless wallet connection through [OpenCampus ID (OCID) ]([url](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L168))
-  - [Linking]([url](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L98)) any wallet to your OCID
-  - Secure authentication and transaction signing on [Edu Chain]([url](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/main.tsx#L68)) with privy wallets.
+  - Seamless wallet connection through [OpenCampus ID (OCID)](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L168)
+  - [Linking](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/components/navigation/MainNav.tsx#L98) any wallet to your OCID
+  - Secure authentication and transaction signing on [Edu Chain](https://github.com/Rabdi-X-Ghewar/Aegis/blob/main/client/src/main.tsx#L68) with privy wallets.
   - Unified wallet management interface
 
 - **Multi-Chain Support**
