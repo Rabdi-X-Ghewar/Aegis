@@ -9,7 +9,7 @@ overrides:
   '@solana/web3.js@1.95.5': npm:@solana/web3.js@1.98.0
   '@solana/web3.js@1.95.8': npm:@solana/web3.js@1.98.0
   '@solana/web3.js@2': npm:@solana/web3.js@2.0.0
-  viem: 2.21.58
+  viem: 2.25.0
   '@polkadot/util': 12.6.2
   '@polkadot/util-crypto': 12.6.2
   '@polkadot/types-create': 10.13.1
@@ -578,7 +578,7 @@ importers:
         specifier: 11.0.3
         version: 11.0.3
       viem:
-        specifier: 2.21.58
+        specifier: 2.25.0
         version: 2.21.58(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)
       vitest:
         specifier: ^3.0.5
@@ -1648,7 +1648,7 @@ packages:
     peerDependencies:
       bitcoinjs-lib: ^7.0.0-rc.0
       bs58: 5.0.0
-      viem: 2.21.58
+      viem: 2.25.0
 
   '@biomejs/biome@1.9.4':
     resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
@@ -2830,7 +2830,7 @@ packages:
     peerDependencies:
       '@solana/wallet-adapter-base': ^0.9.0
       '@solana/web3.js': npm:@solana/web3.js@1.98.0
-      viem: 2.21.58
+      viem: 2.25.0
 
   '@lifi/types@16.3.0':
     resolution: {integrity: sha512-rYMdXRdNOyJb5tI5CXfqxU4k62GiJrElx0DEZ8ZRFYFtljg69X6hrMKER1wVWkRpcB67Ca8SKebLnufy7qCaTw==}
@@ -12337,7 +12337,7 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  viem@2.21.58:
+  viem@2.25.0:
     resolution: {integrity: sha512-mGVKlu3ici7SueEQatn44I7KePP8Nwb5JUjZaQOciWxWHCFP/WLyjdZDIK09qyaozHNTH/t78K3ptXCe+AnMuQ==}
     peerDependencies:
       typescript: '>=5.0.4'
@@ -14382,7 +14382,7 @@ snapshots:
       ethers: 6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       node-jose: 2.2.0
       secp256k1: 5.0.1
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)
+      viem: 2.25.0(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -17123,7 +17123,7 @@ snapshots:
 
   '@phala/dstack-sdk@0.1.7(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)':
     optionalDependencies:
-      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)
+      viem: 2.25.0(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.2)
     transitivePeerDependencies:
       - bufferutil
       - typescript

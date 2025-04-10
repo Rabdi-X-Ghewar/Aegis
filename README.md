@@ -38,7 +38,19 @@ Aegis represents a groundbreaking implementation of OCID-based payments on OpenC
 
 - **Backend**
   - Node.js
-  - ElizaOS Integration
+  - ElizaOS Integration :- plugin-evm
+  ```
+  "settings": {
+        "secrets": {},
+        "voice": {
+            "model": "en_US-hfc_male-medium"
+        },
+        "chains": {
+            "evm": ["eduChainTestnet"]
+           
+        }
+    },
+  ```
   - OpenCampus SDK
 
 - **Blockchain**
