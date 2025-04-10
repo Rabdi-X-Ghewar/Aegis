@@ -172,6 +172,3 @@ For queries, bug reports, or integration help, reach out:
 📩 **Email**: daiwikmahesh@gmail.com  
 📂 **Repo**: [github.com/Rabdi-X-Ghewar/Aegis](https://github.com/Rabdi-X-Ghewar/Aegis)
 
----
-
-Would you like me to help you create a landing page or contribute an onboarding walkthrough as well?
