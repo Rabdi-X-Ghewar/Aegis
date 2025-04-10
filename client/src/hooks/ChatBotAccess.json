@@ -1,0 +1,5 @@
+[
+    "function hasAccess(address _user) external view returns (bool)",
+    "function payForAccess() external",
+    "event AccessGranted(address indexed user, uint256 timestamp)"
+  ]

@@ -1,4 +1,4 @@
-import { Home, LayoutGrid, Ticket, Wine, Users, Fish, Waves, Trophy, Shield } from "lucide-react"
+import { Home, LayoutGrid, Ticket, Wine, Users, Fish, Trophy, Shield } from "lucide-react"
 import {
     Sidebar,
     SidebarContent,
@@ -25,7 +25,6 @@ const sidebarItems = [
     { icon: Wine, label: "Transactions", href: "/transactions" },
     { icon: Users, label: "Chat Bot", href: "/chat-bot" },
     { icon: Fish, label: "Saved Wallets", href: "/saved-wallets" },
-    { icon: Waves, label: "Governance", href: "/governance" },
     { icon: Trophy, label: "Stake", href: "/stake" },
 ]
 

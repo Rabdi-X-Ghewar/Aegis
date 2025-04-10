@@ -11,6 +11,7 @@ import TransactionPage from './Transactions';
 import StakeTokens from './StakeTokens';
 import WalletTracker from "./WalletTracker";
 import AgentHub from "./AgentHub";
+import ProtectedRoute from "@/components/navigation/ProtectedRoute";
 // import Chat from "../routes/chat";
 // import Overview from "../routes/overview";
 
@@ -41,7 +42,9 @@ const HomeAfterLogin = () => {
                             <Route path="/watcher" element={<WalletTracker />} />
                             <Route path="/saved-wallets" element={<SavedWalletsPage />} />
                             <Route path="/transactions" element={<TransactionPage />} />
-                            <Route path="/chat-bot" element={<AgentHub />} />
+                            <Route path="/chat-bot" element={<ProtectedRoute>
+              <AgentHub />
+            </ProtectedRoute>} />
                             <Route path='/stake' element={<StakeTokens />} />
                         </Routes>
                     </main>
