@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Glasses as Sunglasses } from "lucide-react";
 import Login from "@/components/Login";
 import logonav from "@/assets/aegislogo.png"
 

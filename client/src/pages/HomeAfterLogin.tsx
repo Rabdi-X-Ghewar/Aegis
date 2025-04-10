@@ -1,7 +1,7 @@
 
 import { MainNav } from "../components//navigation/MainNav"
 import { AppSidebar } from "../components/navigation/AppSidebar"
-import { Routes, Route, Navigate} from "react-router"
+import { Routes, Route, Navigate } from "react-router"
 import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar"
 
 import Profile from './Profile';
@@ -11,7 +11,6 @@ import TransactionPage from './Transactions';
 import StakeTokens from './StakeTokens';
 import WalletTracker from "./WalletTracker";
 import AgentHub from "./AgentHub";
-import ProtectedRoute from "@/components/navigation/ProtectedRoute";
 // import Chat from "../routes/chat";
 // import Overview from "../routes/overview";
 
@@ -42,9 +41,8 @@ const HomeAfterLogin = () => {
                             <Route path="/watcher" element={<WalletTracker />} />
                             <Route path="/saved-wallets" element={<SavedWalletsPage />} />
                             <Route path="/transactions" element={<TransactionPage />} />
-                            <Route path="/chat-bot" element={<ProtectedRoute>
-              <AgentHub />
-            </ProtectedRoute>} />
+                            <Route path="/chat-bot" element={
+                                <AgentHub />} />
                             <Route path='/stake' element={<StakeTokens />} />
                         </Routes>
                     </main>

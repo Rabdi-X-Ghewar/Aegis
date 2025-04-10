@@ -1,4 +1,4 @@
-import { Home, LayoutGrid, Ticket, Wine, Users, Fish, Trophy, Shield } from "lucide-react"
+import { Home, LayoutGrid, Ticket, Wine, Users, Fish, Trophy } from "lucide-react"
 import {
     Sidebar,
     SidebarContent,

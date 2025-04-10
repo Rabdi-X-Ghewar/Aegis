@@ -9,7 +9,7 @@ import { ChatMessageList } from "@/components/ui/chat/chat-message-list";
 import { useTransition, animated, type AnimatedProps } from "@react-spring/web";
 import { Paperclip, Send, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { Content, UUID,Character } from "@elizaos/core";
+import type { Content, UUID, Character } from "@elizaos/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api";
 import { cn, moment } from "@/lib/utils";
@@ -23,7 +23,6 @@ import type { IAttachment } from "@/types";
 import { AudioRecorder } from "./audio-recorder";
 import { Badge } from "./ui/badge";
 import { useAutoScroll } from "./ui/chat/hooks/useAutoScroll";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 type ExtraContentFields = {
     user: string;
@@ -58,7 +57,7 @@ export default function Page({ agentId, character }: ChatProps) {
     const { scrollRef, isAtBottom, scrollToBottom, disableAutoScroll } = useAutoScroll({
         smooth: true,
     });
-   
+
     useEffect(() => {
         scrollToBottom();
     }, [queryClient.getQueryData(["messages", agentId])]);
@@ -81,12 +80,12 @@ export default function Page({ agentId, character }: ChatProps) {
 
         const attachments: IAttachment[] | undefined = selectedFile
             ? [
-                  {
-                      url: URL.createObjectURL(selectedFile),
-                      contentType: selectedFile.type,
-                      title: selectedFile.name,
-                  },
-              ]
+                {
+                    url: URL.createObjectURL(selectedFile),
+                    contentType: selectedFile.type,
+                    title: selectedFile.name,
+                },
+            ]
             : undefined;
 
         const newMessages = [
@@ -179,7 +178,7 @@ export default function Page({ agentId, character }: ChatProps) {
     return (
         <div className="flex flex-col w-full h-full">
             <div className="flex-1 overflow-hidden rounded-2xl bg-background">
-                <ChatMessageList 
+                <ChatMessageList
                     scrollRef={scrollRef}
                     isAtBottom={isAtBottom}
                     scrollToBottom={scrollToBottom}
@@ -200,23 +199,21 @@ export default function Page({ agentId, character }: ChatProps) {
                             >
                                 <ChatBubble
                                     variant={variant}
-                                    className={`flex flex-row items-start gap-2 ${
-                                        variant === "sent" ? "justify-end" : ""
-                                    }`}
+                                    className={`flex flex-row items-start gap-2 ${variant === "sent" ? "justify-end" : ""
+                                        }`}
                                 >
                                     {message?.user !== "user" ? (
                                         <Avatar className="size-8 p-1 border rounded-full select-none">
-                                            <AvatarImage src={`${character?.name}.jpeg`} className="rounded-full"/>
+                                            <AvatarImage src={`${character?.name}.jpeg`} className="rounded-full" />
                                         </Avatar>
                                     ) : null}
                                     <div className={`flex flex-col ${variant === "sent" ? "items-end" : "items-start"}`}>
                                         <ChatBubbleMessage
                                             isLoading={message?.isLoading}
-                                            className={`rounded-2xl ${
-                                                variant === "sent" 
-                                                    ? "bg-primary text-primary-foreground" 
+                                            className={`rounded-2xl ${variant === "sent"
+                                                    ? "bg-primary text-primary-foreground"
                                                     : "bg-secondary/30"
-                                            } px-4 py-3`}
+                                                } px-4 py-3`}
                                         >
                                             {message?.user !== "user" ? (
                                                 <AIWriter>
@@ -251,7 +248,7 @@ export default function Page({ agentId, character }: ChatProps) {
                                         </ChatBubbleMessage>
                                         <div className="flex items-center gap-4 justify-between w-full mt-1 px-1">
                                             {message?.text &&
-                                            !message?.isLoading ? (
+                                                !message?.isLoading ? (
                                                 <div className="flex items-center gap-1">
                                                     <CopyButton
                                                         text={message?.text}
@@ -325,8 +322,8 @@ export default function Page({ agentId, character }: ChatProps) {
                             </div>
                         </div>
                     ) : null}
-                 
-                   <ChatInput
+
+                    <ChatInput
                         ref={inputRef}
                         onKeyDown={handleKeyDown}
                         value={input}
@@ -334,7 +331,7 @@ export default function Page({ agentId, character }: ChatProps) {
                         placeholder="Type your message here..."
                         className="min-h-12 resize-none overflow-hidden rounded-tl-2xl rounded-tr-2xl bg-background border-0 p-4 shadow-none focus-visible:ring-0"
                     />
-                    
+
                     <div className="flex items-center p-3 pt-0 bg-background rounded-b-2xl">
                         <Tooltip>
                             <TooltipTrigger asChild>
